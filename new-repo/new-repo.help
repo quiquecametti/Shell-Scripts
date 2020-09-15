@@ -1,0 +1,36 @@
+This command allows user to create a GitHub repository from terminal using GitHub REST API and Curl. Organization parameters will be taken into account later.
+List of parameters:
+    -u     --user                  | GitHub account username.
+    -n     --name                  | Required. The name of the repository.
+    -d     --description           | A short description of the repository.
+    -w     --homepage              | A URL with more information about the repository.
+    -pr    --private               | Create a private repository.
+    -nI    --noIssues              | Disable issues for this repository.
+    -nP    --noProjects            | Disable projects for this repository.
+    -nW    --noWiki                | Disable Wiki.
+    -t     --isTemplate            | Make this repo available as a template repository.
+    -aI    --autoInit              | Create an initial commit with empty README.
+    -nSM   --noSquashMerge         | Prevent squash-merging pull requests.
+    -nMC   --noMergeCommit         | Prevent merging pull requests with merge commits.
+    -nRM   --noRebaseMerge         | Prevent rebase-merging.
+    -dBoM  --deleteBranchonMerge   | Prevent automatically deleting head branches when pull requests are merged.
+    -uF    --uploadFolder          | Upload all files from current folder to main branch
+    --token                        | Add/Overwrite personal token for GitHub API.
+    --removeToken                  | Remove personal token for GitHub API.
+
+Example of JSON file used to create repo using default options (using only params -u -n -d -w):
+{
+    "name":"Repo de prueba",
+    "description":"Descripción del Repo de Prueba",
+    "homepage":"https://homepage.repo.test",
+    "private":"false",
+    "has_issues":"true",
+    "has_projects":"true",
+    "has_wiki":"true",
+    "is_template":"false",
+    "auto_init":"false",
+    "allow_squash_merge":"true",
+    "allow_merge_commit":"true",
+    "allow_rebase_merge":"true",
+    "delete_branch_on_merge":"false"
+}
