@@ -33,12 +33,12 @@ do
         --token)
             shift
             if [ -f $1 ]; then
-                cp $1 $DIR/github.token
+                cp $1 $DIR/github_${user}.token
             else
-                echo ${1} > $DIR/github.token;
+                echo ${1} > $DIR/github_${user}.token;
             fi
             exit 0;;
-        --removeToken) rm $DIR/github.token;exit 0;;
+        --removeToken) rm $DIR/github_${user}.token;exit 0;;
         --ssh) use_ssh=true;;
         -uF|--uploadFolder) upload_folder=true;;
         #-j|--json)
@@ -73,8 +73,8 @@ json_conf='{
 
 echo $json_conf > /tmp/new_repo.json
 
-if [ -f ${DIR}/github.token ]; then
-    token=$(cat "$DIR/github.token")
+if [ -f ${DIR}/github_${user}.token ]; then
+    token=$(cat "$DIR/github_${user}.token")
     curl -X POST -u $user:$token $api_link -d "@/tmp/new_repo.json" > /tmp/new-repo.log
 else
     echo "No Token"
