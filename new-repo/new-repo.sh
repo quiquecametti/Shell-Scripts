@@ -1,4 +1,5 @@
 #!/bin/bash
+#!/bin/zsh
 
 # Uses curl and GitHub API to create a new repository
 #Default Options from GitHub API found here https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user
