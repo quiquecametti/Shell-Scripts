@@ -17,6 +17,7 @@ List of parameters:
     -uF    --uploadFolder          | Upload all files from current folder to main branch
     --token                        | Add/Overwrite personal token for GitHub API.
     --removeToken                  | Remove personal token for GitHub API.
+    --ssh                          | Use ssh instead of https
 
 Example of JSON file used to create repo using default options (using only params -u -n -d -w):
 {
